@@ -1,0 +1,24 @@
+{'actions': ['976849834ace465ba5d902e6577281da'],
+ 'level': 'organizational',
+ 'make_new_node': '',
+ 'nik': '050_horse_cheat_01',
+ 'nodes': '[050_bureau_questions] Вопросы от ехидны ;)"',
+ 'require_img_uploader': False,
+ 'task': '<p>... две функции, которые будут по строке делать целочисленные '
+         'координаты и наоборот:\r\n'
+         '\r\n'
+         '<p><code>x, y = to_int("A2")</code>\r\n'
+         '\r\n'
+         '<p><code>final_string_position = to_chess(x, y)</code>\r\n'
+         '\r\n'
+         '<p>Также полезно сделать функцию, которая по кортежу целочисленных '
+         'координат сообщает, находится ли это клетка внутри шахматного поля '
+         'или снаружи:\r\n'
+         '\r\n'
+         '<p><code>if on_board(x, y):\r\n'
+         '    ...\r\n'
+         '</code>',
+ 'title': '',
+ 'youtube_from': '',
+ 'youtube_id': '',
+ 'youtube_to': ''}

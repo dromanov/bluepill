@@ -1,0 +1,5 @@
+{'id': '01de9294fcf74badb61e92a5e2def3da',
+ 'node_id': '0_plan',
+ 'the_action': "me.goto('050_transpose');",
+ 'title': 'Транспонирование (50 баллов)',
+ 'type': 'simple'}

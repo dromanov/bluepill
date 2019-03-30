@@ -1,0 +1,5 @@
+{'id': 'c530a3f85c414e138e381ca50e489e70',
+ 'node_id': '050_transpose',
+ 'the_action': "me.goto('0_plan');",
+ 'title': 'В начало, пожалуйста',
+ 'type': 'simple'}

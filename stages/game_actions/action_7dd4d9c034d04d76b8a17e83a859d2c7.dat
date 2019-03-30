@@ -1,0 +1,5 @@
+{'id': '7dd4d9c034d04d76b8a17e83a859d2c7',
+ 'node_id': '050_bureau_questions',
+ 'the_action': "me.goto('050_bureau');",
+ 'title': 'Назад',
+ 'type': 'simple'}

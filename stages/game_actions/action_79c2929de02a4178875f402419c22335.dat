@@ -1,0 +1,5 @@
+{'id': '79c2929de02a4178875f402419c22335',
+ 'node_id': '0_plan',
+ 'the_action': "me.goto('050_bureau');",
+ 'title': 'Бюрократия (50 баллов)',
+ 'type': 'simple'}

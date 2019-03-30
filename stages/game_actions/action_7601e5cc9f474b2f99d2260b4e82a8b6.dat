@@ -1,0 +1,5 @@
+{'id': '7601e5cc9f474b2f99d2260b4e82a8b6',
+ 'node_id': '050_bureau',
+ 'the_action': "me.goto('0_plan');",
+ 'title': 'В начало, пожалуйста',
+ 'type': 'simple'}

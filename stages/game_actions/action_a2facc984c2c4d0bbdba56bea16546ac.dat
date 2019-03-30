@@ -1,0 +1,5 @@
+{'id': 'a2facc984c2c4d0bbdba56bea16546ac',
+ 'node_id': '050_transpose',
+ 'the_action': "me.goto('050_transpose_questions');",
+ 'title': 'Ехидные вопросы',
+ 'type': 'simple'}

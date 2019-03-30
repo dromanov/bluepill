@@ -1,0 +1,7 @@
+node_modules/
+timetable.sublime-workspace
+npm-debug.log
+peopleware.sublime-workspace
+*.pyc
+.idea
+venv

@@ -1,0 +1,5 @@
+{'id': '44dbc8bc45284d1c95e5735c766fca9c',
+ 'node_id': '050_horse',
+ 'the_action': "me.goto('050_horse_questions');",
+ 'title': 'Ехидные вопросы',
+ 'type': 'simple'}

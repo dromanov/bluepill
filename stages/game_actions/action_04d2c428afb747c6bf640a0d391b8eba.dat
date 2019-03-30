@@ -1,0 +1,5 @@
+{'id': '04d2c428afb747c6bf640a0d391b8eba',
+ 'node_id': '050_uncomprehensible_questions',
+ 'the_action': "me.goto('050_uncomprehensible');",
+ 'title': 'Назад',
+ 'type': 'simple'}

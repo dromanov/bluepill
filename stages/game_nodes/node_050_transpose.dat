@@ -1,0 +1,17 @@
+{'actions': ['c530a3f85c414e138e381ca50e489e70',
+             'a2facc984c2c4d0bbdba56bea16546ac'],
+ 'level': 'organizational',
+ 'make_new_node': '',
+ 'nik': '050_transpose',
+ 'nodes': '[050_bureau_questions] Вопросы от ехидны ;)"',
+ 'require_img_uploader': False,
+ 'task': '<p>Напишите функцию <code>transpose(matrix)</code>, которая '
+         'принимает матрицу N × M (т.е. список из N списков-строк по M '
+         'элементов каждый) и транспонирует её, т.е. превращает строки в '
+         'столбцы и наоборот.\r\n'
+         '\r\n'
+         '<p>i-ая строка при этом превращается в i-й столбец.',
+ 'title': 'Транспонирование',
+ 'youtube_from': '',
+ 'youtube_id': '',
+ 'youtube_to': ''}

@@ -1,0 +1,5 @@
+{'id': 'bd2d5e3e869845c59e31a4ba9066a832',
+ 'node_id': '050_horse_questions',
+ 'the_action': "me.goto('050_horse');",
+ 'title': 'Назад',
+ 'type': 'simple'}

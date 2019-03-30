@@ -1,0 +1,5 @@
+{'id': 'feaca8ad283241458af5f1921482720b',
+ 'node_id': '050_transpose_questions',
+ 'the_action': "me.goto('050_transpose');",
+ 'title': 'Скорее назад к задаче!',
+ 'type': 'simple'}

@@ -1,0 +1,22 @@
+{'actions': ['feaca8ad283241458af5f1921482720b'],
+ 'level': 'organizational',
+ 'make_new_node': '',
+ 'nik': '050_transpose_questions',
+ 'nodes': '[050_bureau_questions] Вопросы от ехидны ;)"',
+ 'require_img_uploader': False,
+ 'task': '<ul>\r\n'
+         '<li><p>Вы внимательно рассмотрели <a target="_blank" '
+         "href='http://pythontutor.com/visualize.html#code=def%20modify_my_arg%28x%29%3A%0A%20%20%20%20x%5B0%5D%20%2B%3D%201%0A%20%20%20%20%0A%20%20%20%20%0Ax%20%3D%20list%28range%284%29%29%0Aprint%28x%29%0Amodify_my_arg%28x%29%0Aprint%28x%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false'>пример</a>, "
+         'нажимали там кнопку <button type="button" class="btn '
+         'btn-default">Forward  &gt;</button> для пошагового исполнения? '
+         'Смотрели, что сделалось с первым элементом списка после вызова '
+         'функции?</li>\r\n'
+         '\r\n'
+         '<li><p>Вы знаете разницу между <code>sp += [2]</code> и <code>sp = '
+         'sp + [2]</code> (например, если <code>sp = [1, 2, '
+         '3]</code>)?</li>\r\n'
+         '</ul>',
+ 'title': 'Ехидные вопросы:',
+ 'youtube_from': '',
+ 'youtube_id': '',
+ 'youtube_to': ''}

@@ -1,0 +1,5 @@
+{'id': 'cf1a3b5c542a4acf930d0e1d7e0c50fa',
+ 'node_id': '050_horse',
+ 'the_action': "me.goto('050_horse_cheat_01');",
+ 'title': 'Выжимка из рекомендаций (надоело читать)',
+ 'type': 'simple'}

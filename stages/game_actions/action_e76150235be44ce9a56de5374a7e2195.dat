@@ -1,0 +1,5 @@
+{'id': 'e76150235be44ce9a56de5374a7e2195',
+ 'node_id': '0_plan',
+ 'the_action': "me.goto('050_horse');",
+ 'title': 'Ход конём (50 баллов)',
+ 'type': 'simple'}

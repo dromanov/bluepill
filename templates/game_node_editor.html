@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ data.get("stage_name", "") }}</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="{{ static_url("bootstrap-3.3.7/css/bootstrap.min.css") }}" rel="stylesheet">
+       <link rel="stylesheet" href="{{ static_url("chat.css") }}" type="text/css">
+  </head>
+
+<body class="container-fluid">
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h1>Редактор уровней</h1>
+    </div>
+  </div>
+
+  {# Функция для генерации иконки из набора бутстрапа.  #}
+  {%
+    set glyph = lambda name, add_space=True: \
+      '<span class="glyphicon glyphicon-%s" aria-hidden="true"></span> %s ' % \
+        (name, add_space and "&nbsp;" or "")
+  %}
+
+  <form method="POST" class="form-horizontal">
+    <div class="form-group">
+      <label for="id_nik" class="col-sm-2 control-label">Код уровня: </label>
+      <div class="col-sm-10">
+        <input type="text"
+               name="nik"
+               id="id_nik"
+               class="form-control"
+               value="{{ data["nik"] }}"
+               disabled>
+      </div>
+    </div>
+
+    {# Короткое название локации. #}
+    <div class="form-group">
+      <label for="id_title" class="col-sm-2 control-label">Заголовок: </label>
+      <div class="col-sm-10">
+        <input type="text"
+               class="form-control"
+               name="title"
+               id="id_title"
+               value="{{ data.get("title", "") }}"
+               autocomplete="off"
+               placeholder="Короткий заголовок элемента квеста">
+      </div>
+    </div>
+
+    {# Выбор уровня сложности. #}
+    {# Функция для генерации активационного флага для выпадающего списка. #}
+    {# `61` is the line number to make the function name unique.          #}
+    {%
+      set _select_62 = lambda v: \
+        'value=%s %s' % (v, "" if v != data.get('level', '') else "selected")
+    %}
+    <div class="form-group">
+      <label for="level_type" class="col-sm-2 control-label">Выберите тип локации:</label>
+        <div class="col-sm-4">
+        <div class="input-group">
+          <select class="form-control"
+                  name="level"
+                  id="level_type">
+            <option disabled>Выберите тип локации</option>
+            <option {{ _select_62("organizational") }}> Организационный этап </option>
+            <option {{ _select_62("easy_level")   }}> Легкий уровень </option>
+            <option {{ _select_62("medium_level") }}> Средний уровень </option>
+            <option {{ _select_62("hard_level")   }}> Сложный уровень </option>
+            <option {{ _select_62("fine_level")   }}> Штрафной уровень </option>
+          </select>
+        </div>
+      </div>
+	 </div>
+
+    {# Описание задания (html). #}
+    <div class="form-group">
+      <label for="id_task" class="col-sm-2 control-label">Описание задания:</label>
+      <div class="col-sm-10">
+        <textarea name="task"
+                  id="id_task"
+                  class="form-control"
+                  rows="5"
+                  placeholder="Описание задания (html можно)">{{
+          data.get("task", "")
+          }}</textarea>
+      </div>
+    </div>
+
+    {# Выбор подключения загрузчика файлов. #}
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"
+                   name="require_img_uploader"
+                   {% if data.get("require_img_uploader") == True %}
+                   checked
+                   {% end %} >
+            подключить загрузчик изображений
+            <!-- {{ data.get("require_img_uploader") }} -->
+          </label>
+        </div>
+      </div>
+    </div>
+
+    {# Выбор подключения ролика с ютуба. #}
+    <div class="form-group">
+      <label for="youtube_id" class="col-sm-2 control-label">Видео с ютуба:</label>
+      <div class="col-sm-10 form-inline">
+        <input type="text"
+               name="youtube_id"
+               id="youtube_id"
+               value="{{ data.get("youtube_id", "") }}"
+               placeholder="ID ролика" />
+        <input type="text"
+               name="youtube_from"
+               value="{{ data.get("youtube_from", "") }}"
+               placeholder="from hh:mm:ss" />
+        <input type="text"
+               name="youtube_to"
+               value="{{ data.get("youtube_to", "") }}"
+               placeholder="to hh:mm:ss" />
+      </div>
+    </div>
+
+    {# Список существующих уровней (карта-шпаргалка). #}
+    <div class="form-group">
+      <label for="id_nodes" class="col-sm-2 control-label">Существующие уровни:</label>
+        <div class="col-sm-4">
+        {# Existing nodes as drop-down lists. #}
+        <div class="input-group">
+          <div class="input-group-addon">
+            {% raw glyph('map-marker', add_space=False) %}
+          </div>
+          <select class="form-control"
+                  name="nodes"
+                  id="id_nodes">
+          {% for num, node in enumerate(nodes.values()) %}
+          {# TODO: rename `nik` to `node_id`. #}
+            <option>[{{ node["nik"] }}] {{ node["title"] }}"</option>
+          {% end %}
+          </select>
+        </div>
+      </div>
+
+
+      {# New node creation. #}
+      <label for="id_node_make_new" class="col-sm-2 control-label">Создать уровень:</label>
+      <div class="col-sm-4">
+        <div class="input-group">
+          <input type="text"
+                 class="form-control"
+                 name="make_new_node"
+                 id="id_node_make_new"
+                 value=""
+                 autocomplete="off"
+                 placeholder="Введите метку новой ноды (in English, a variable name)">
+          <span class="input-group-btn">
+            <button class="btn btn-success" type="button">
+              {% raw glyph('plus') %} Добавить
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    {# Редактирование действий (Action). #}
+    <div class="form-group">
+      <label for="id_buttons" class="col-sm-2 control-label">
+        Варианты действий:
+      </label>
+      <div class="col-sm-10">
+        {# Уже существующие действия. #}
+        {% for action_id in data.get('actions', []) %}
+        {%   set _a = action_details[action_id] %}
+        {%   if _a['type'] == 'simple' %}
+        {%     include "game_action_editor_button_simple_action.html" %}
+        {%   end %}
+        {% end %}
+
+        {# Меню для создания нового действия (Action). #}
+        <div class="btn-group">
+          <button type="button" class="btn btn-success dropdown-toggle"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {% raw glyph('plus') %} Новое действие <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            {% for icon, link, label in action_menu %}
+              {% if icon != "---" %}
+                <li><a href="?do=create_new_action&type={{ link }}">
+                  {% raw glyph(icon) %} {{ label }}
+                </a></li>
+              {% else %}
+                <li role="separator" class="divider"></li>
+              {%  end %}
+            {%  end %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-4">
+        <button type="submit" class="btn btn-success">Сохранить</button>
+        <a href="../game_node/{{ data["nik"] }}">
+          <button type="button" class="btn btn-link">Отмена</button>
+        </a>
+      </div>
+    </div>
+
+    {% module xsrf_form_html() %}
+  </form>
+
+  <script src="{{ static_url("jquery.min.js") }}"></script>
+  <script src="{{ static_url("bootstrap-3.3.7/js/bootstrap.min.js") }}"></script>
+</body>
+</html>

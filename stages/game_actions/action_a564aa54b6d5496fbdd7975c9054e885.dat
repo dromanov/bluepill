@@ -1,0 +1,5 @@
+{'id': 'a564aa54b6d5496fbdd7975c9054e885',
+ 'node_id': '050_horse',
+ 'the_action': "me.goto('0_plan');",
+ 'title': 'В начало, пожалуйста',
+ 'type': 'simple'}
